@@ -14,6 +14,11 @@ namespace FastFurios_Game.Controllers
         int contCalles = 0;
         int numSelectorCalles;
 
+        public Vector3 extendScreen;
+        public bool exitScreen;
+        public GameObject mCamGo;
+        public Camera mCamComp;
+
         public GameObject calleLast;
         public GameObject calleNew;
 
@@ -26,7 +31,12 @@ namespace FastFurios_Game.Controllers
         void StartGame()
         {
             containerCallesGo = GameObject.Find("ContainerCalle");
+            
+            mCamGo = GameObject.Find("MainCamera");
+            mCamComp = mCamGo.GetComponent<Camera>();
+
             speedMotorRoad();
+            ExtendScreen();
             SearchCalle();
         }
         
@@ -64,6 +74,8 @@ namespace FastFurios_Game.Controllers
                 calleLast.transform.position.y + sizeCalle - 5,
                 0
             );
+
+            exitScreen = false;
               
         }
         
@@ -80,10 +92,32 @@ namespace FastFurios_Game.Controllers
         }
 
         void speedMotorRoad() => speed = 10;
+
+
+        void ExtendScreen()
+        {
+            extendScreen = new Vector3(0, mCamComp.ScreenToWorldPoint(new Vector3(0,0,0)).y - 0.5f, 0);
+        }
         void Update()
         {
             if(startGame == true && endGame == false)
                 transform.Translate(Vector3.down * speed * Time.deltaTime);
+
+
+            if(calleLast.transform.position.y < extendScreen.y && !exitScreen)
+            {
+                exitScreen = true;
+                // Destruir calles
+                DestroyCalles();
+            }
+        }
+
+        void DestroyCalles()
+        {
+            Destroy(calleLast);
+            sizeCalle = 0;
+            calleLast = null;
+            createCalle();
         }
     }
 
