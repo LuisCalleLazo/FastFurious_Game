@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 858345529}
   - component: {fileID: 858345528}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Distance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -778,6 +778,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce71975a68c1c94b95ad23c51075fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1320816201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1320816203}
+  - component: {fileID: 1320816202}
+  m_Layer: 0
+  m_Name: Chronometer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1320816202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320816201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38cd06ac2483484885278ebb6df9047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motorRoadsGo: {fileID: 0}
+  motorRoadController: {fileID: 0}
+  time: 0
+  distance: 0
+  textTime: {fileID: 1668464848}
+  textDistance: {fileID: 858345528}
+--- !u!4 &1320816203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320816201}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.285313, y: 18.35263, z: 1.9308002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1390014656
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,7 +1005,7 @@ GameObject:
   - component: {fileID: 1668464849}
   - component: {fileID: 1668464848}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1683,3 +1733,4 @@ SceneRoots:
   - {fileID: 1390014659}
   - {fileID: 1695599885}
   - {fileID: 1749538901}
+  - {fileID: 1320816203}

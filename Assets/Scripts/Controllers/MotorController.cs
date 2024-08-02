@@ -100,15 +100,15 @@ namespace FastFurios_Game.Controllers
         }
         void Update()
         {
-            if(startGame == true && endGame == false)
-                transform.Translate(Vector3.down * speed * Time.deltaTime);
-
-
-            if(calleLast.transform.position.y < extendScreen.y && !exitScreen)
+            if(startGame && !endGame)
             {
-                exitScreen = true;
-                // Destruir calles
-                DestroyCalles();
+                transform.Translate(Vector3.down * speed * Time.deltaTime);
+                
+                if(calleLast.transform.position.y < extendScreen.y && !exitScreen)
+                {
+                    exitScreen = true;
+                    DestroyCalles();
+                }
             }
         }
 
