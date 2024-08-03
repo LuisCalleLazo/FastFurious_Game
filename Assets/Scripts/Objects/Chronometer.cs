@@ -1,5 +1,6 @@
 
 using FastFurios_Game.Controllers;
+using FastFurios_Game.Utils;
 using TMPro;
 using UnityEngine;
 
@@ -18,10 +19,11 @@ public class Chronometer : MonoBehaviour
         motorRoadsGo = GameObject.Find("MotorRoad");
         motorRoadController = motorRoadsGo.GetComponent<MotorController>();
 
-        textTime.text = "2 : 00";
+        time = (float) InitValuesGame.TimeGame;
+
+        textTime.text = $"0 : {(int)time}";
         textDistance.text = "0";
 
-        time = 20;
     }
 
     // Update is called once per frame
