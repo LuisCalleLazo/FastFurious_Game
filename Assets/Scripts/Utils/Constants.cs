@@ -9,4 +9,10 @@ namespace FastFurios_Game.Utils
     {
         TimeGame = 10, // Seconds
     }
+
+    public static class AxesControls
+    {
+        public static string ControlHorizontal() => "Horizontal";
+        public static string ControlVertical() => "Vertical";
+    }
 }
