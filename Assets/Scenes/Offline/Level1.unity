@@ -290,12 +290,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197947404}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.92, y: 5.72, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.030000031, y: 13.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 844206840}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &198717322
 GameObject:
@@ -725,12 +725,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718833990}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.89, y: 7.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 844206840}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &718833993
 BoxCollider2D:
@@ -777,6 +777,41 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6319466, y: 17.522587}
   m_EdgeRadius: 0
+--- !u!1 &844206839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 844206840}
+  m_Layer: 0
+  m_Name: Limits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &844206840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844206839}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.89, y: -7.76, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1361286798}
+  - {fileID: 718833992}
+  - {fileID: 197947406}
+  - {fileID: 1813782614}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &858345526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1073,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b68198df879dc5642afc6c1bd68c2594, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.456
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1145,6 +1180,8 @@ MonoBehaviour:
   counterNumComp: {fileID: 0}
   cocheControllerGo: {fileID: 0}
   cocheGo: {fileID: 0}
+  joystick: {fileID: 1439120161}
+  soundFx: {fileID: 1528325509}
 --- !u!4 &1163057512
 Transform:
   m_ObjectHideFlags: 0
@@ -1237,11 +1274,11 @@ Transform:
   m_GameObject: {fileID: 1361286796}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.003452573, w: 0.99999404}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.89, y: 7.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 844206840}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.396}
 --- !u!61 &1361286799
 BoxCollider2D:
@@ -1367,6 +1404,10 @@ PrefabInstance:
     - target: {fileID: 1531213445540486, guid: e0815e227ed46e445b99930271e8942c, type: 3}
       propertyPath: m_Name
       value: Joystick
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531213445540486, guid: e0815e227ed46e445b99930271e8942c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1615126503581138, guid: e0815e227ed46e445b99930271e8942c, type: 3}
       propertyPath: m_IsActive
@@ -1877,7 +1918,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7db08d0c1e4a1e8448a6a0c721325a38, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.258
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1970,7 +2011,7 @@ Transform:
   m_GameObject: {fileID: 1729257603}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17039062, y: 0.4502617, z: 1.6040653}
+  m_LocalPosition: {x: 0.08, y: -3.64, z: 1.6040653}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2094,12 +2135,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813782612}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.89, y: -7.76, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 844206840}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1814458445
 GameObject:
@@ -2753,7 +2794,7 @@ Transform:
   m_GameObject: {fileID: 2097253898}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.17039062, y: -0.4502617, z: -1.6040653}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2771,7 +2812,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9d1a750038cb538408f5d134b088a898, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.545
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2963,9 +3004,6 @@ SceneRoots:
   - {fileID: 1749538901}
   - {fileID: 1320816203}
   - {fileID: 1163057512}
-  - {fileID: 1361286798}
-  - {fileID: 718833992}
-  - {fileID: 197947406}
-  - {fileID: 1813782614}
+  - {fileID: 844206840}
   - {fileID: 1528325510}
   - {fileID: 323886267}

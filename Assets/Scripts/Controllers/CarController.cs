@@ -13,11 +13,9 @@ namespace FastFurios_Game.Controllers
         public float turningAngle;
         public float speed;
         public Joystick joystick;
-        private string axisHorizontal;
 
         void Start()
         {
-            axisHorizontal = AxesControls.ControlHorizontal();
             carGo = FindObjectOfType<Car>().gameObject;
         }
 
