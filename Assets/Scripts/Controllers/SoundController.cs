@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SimpleInputNamespace;
 using UnityEngine;
 
 namespace FastFurios_Game.Controllers
@@ -15,6 +16,7 @@ namespace FastFurios_Game.Controllers
 
         public GameObject cocheControllerGo;
         public GameObject cocheGo;
+        public Joystick joystick;
 
         void Start()
         {
@@ -55,17 +57,12 @@ namespace FastFurios_Game.Controllers
             
             counterNumComp.sprite = numbers[3];
             motorController.startGame = true;
+            joystick.gameObject.SetActive(true);
             counterNumGo.GetComponent<AudioSource>().Play();
             cocheGo.GetComponent<AudioSource>().Play();
             yield return new WaitForSeconds(2);
 
             counterNumGo.SetActive(false);
-        }
-
-
-        void Update()
-        {
-            
         }
     }
 }

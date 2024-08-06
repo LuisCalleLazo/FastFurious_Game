@@ -7,7 +7,7 @@ namespace FastFurios_Game.Utils
 {
     public enum InitValuesGame
     {
-        TimeGame = 10, // Seconds
+        TimeGame = 120, // Seconds
     }
 
     public static class AxesControls
