@@ -12,8 +12,7 @@ namespace FastFurios_Game.UI
         public Sprite[] spritesArray;
         public float speed = .07f;
         private int indexSprite;
-        Coroutine corutineAnim;
-        bool play = true;
+        public bool play = true;
 
         void Awake()
         {
@@ -48,7 +47,7 @@ namespace FastFurios_Game.UI
             indexSprite += 1;
             
             if (play)
-                corutineAnim = StartCoroutine(PlayAnimUI());
+                StartCoroutine(PlayAnimUI());
         }
 
     }
