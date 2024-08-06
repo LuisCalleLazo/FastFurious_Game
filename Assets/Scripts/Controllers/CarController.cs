@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using FastFurios_Game.Player;
 using FastFurios_Game.Utils;
+using SimpleInputNamespace;
 using UnityEngine;
 
 namespace FastFurios_Game.Controllers
@@ -11,6 +12,7 @@ namespace FastFurios_Game.Controllers
         public GameObject carGo;
         public float turningAngle;
         public float speed;
+        public Joystick joystick;
         private string axisHorizontal;
 
         void Start()
@@ -21,12 +23,23 @@ namespace FastFurios_Game.Controllers
 
         void Update()
         {
-            float turnInZ = 0;
-            float axisH = Input.GetAxis(axisHorizontal);
-            transform.Translate(Vector2.right * axisH * speed * Time.deltaTime);
+            float moveHorizontal = joystick.Value.x;
+            float moveVertical = joystick.Value.y;
 
-            turnInZ = axisH * -turningAngle;
-            carGo.transform.rotation = Quaternion.Euler(0,0, turnInZ);
+            // Mover el coche en ambas direcciones
+            Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+            transform.Translate(movement * speed * Time.deltaTime);
+
+            // Calcular la rotación del coche
+            float turnInZ = moveHorizontal * -turningAngle;
+            carGo.transform.rotation = Quaternion.Euler(0, 0, turnInZ);
+
+            // Ajustar la rotación en función del movimiento vertical
+            if (moveVertical != 0)
+            {
+                float forwardAngle = moveVertical > 0 ? turningAngle : -turningAngle;
+                carGo.transform.Rotate(0, 0, moveHorizontal * forwardAngle * Time.deltaTime);
+            }
         }
     }
 }
