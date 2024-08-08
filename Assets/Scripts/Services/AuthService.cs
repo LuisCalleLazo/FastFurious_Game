@@ -27,7 +27,7 @@ namespace FastFurios_Game.Services
             },
             (error) =>
             {
-                Debug.Log("Hubo un gran error");
+                Debug.Log(error);
                 callback( new AuthResponseDto{Player = null});
             }));
 
