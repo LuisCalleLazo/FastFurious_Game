@@ -9,20 +9,17 @@ namespace FastFurios_Game.Dtos
     [Serializable]
     public class AuthResponseDto
     {
-        #nullable enable
-        public bool ok { get; set; }
-        public AuthResponsePlayerDto? player { get; set; }
-        #nullable disable
+        public string CurrentToken {get; set;}
+        public string RefreshToken {get; set;}
+        public PlayerDto Player { get; set; }
     }
 
     [Serializable]
-    public class AuthResponsePlayerDto
+    public class PlayerDto
     {
-        public string id { get; set; }
-        public string name { get; set; }
-        public string email { get; set; }
-        public bool online { get; set; }
-        public string photo { get; set; }
-        public bool indications { get; set; }
+        public int Id {get; set;}
+        public string Name {get; set;} 
+        public string Email { get; set; }
+        public int Age {get; set;}
     }
 }

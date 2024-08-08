@@ -13,22 +13,22 @@ namespace FastFurios_Game.Services
         {
 
             Dictionary<string, string> formData = new Dictionary<string, string>();
-                formData.Add("Name", name);
+                formData.Add("nameOrGmail", name);
                 formData.Add("Password", password);
 
             ApiProvider.Instance.StartCoroutine(ApiProvider.Instance.PostRequest("/auth", formData,
             (responseJson) =>
             {
                 var dataUser = JsonConvert.DeserializeObject<AuthResponseDto>(responseJson);
-                Debug.Log(dataUser.player.id);
-                PlayerPrefs.SetString("NamePlayer", dataUser.player.name);
-                PlayerPrefs.SetString("IdPlayer", dataUser.player.id);
+                Debug.Log(dataUser.Player.Id);
+                PlayerPrefs.SetString("NamePlayer", dataUser.Player.Name);
+                PlayerPrefs.SetString("IdPlayer", dataUser.Player.Id.ToString());
                 callback(dataUser);
             },
             (error) =>
             {
                 Debug.Log("Hubo un gran error");
-                callback( new AuthResponseDto{ok = false, player = null});
+                callback( new AuthResponseDto{Player = null});
             }));
 
         }
