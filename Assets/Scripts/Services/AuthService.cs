@@ -13,10 +13,10 @@ namespace FastFurios_Game.Services
         {
 
             Dictionary<string, string> formData = new Dictionary<string, string>();
-                formData.Add("nameOrGmail", name);
+                formData.Add("NameOrGmail", name);
                 formData.Add("Password", password);
 
-            ApiProvider.Instance.StartCoroutine(ApiProvider.Instance.PostRequest("/auth", formData,
+            ApiProvider.Instance.StartCoroutine(ApiProvider.Instance.PostRequest("/auth/login", formData,
             (responseJson) =>
             {
                 var dataUser = JsonConvert.DeserializeObject<AuthResponseDto>(responseJson);
