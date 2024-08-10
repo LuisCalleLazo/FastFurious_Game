@@ -9,7 +9,7 @@ namespace FastFurios_Game.Services
 {
     public class AuthService : MonoBehaviour
     {
-        public static void LoginPlayer(string name, string password, Action<AuthResponseDto> callback)
+        public static void LoginPlayer(string name, string password, Action<AuthResponseDto> callback, Action<List<string>> errorMessage)
         {
 
             Dictionary<string, string> formData = new Dictionary<string, string>();
@@ -27,8 +27,7 @@ namespace FastFurios_Game.Services
             },
             (error) =>
             {
-                Debug.Log(error);
-                callback( new AuthResponseDto{Player = null});
+                errorMessage(error);
             }));
 
         }
