@@ -20,6 +20,7 @@ namespace FastFurios_Game.Connections
         public ManageErrors manageErrors;
         
         // TODO: LOADINGS 
+        private bool isLoading = false;
         public GameObject txtLogin;
         public GameObject loadBtnLogin;
         private AnimationSprites animLoadLogin;
@@ -46,29 +47,32 @@ namespace FastFurios_Game.Connections
 
         public void OnLoginButtonClicked()
         {
-            var errorsLocal = new List<string>();
-            if (password.text.Length <= 6 || password.text.Length > 15)
+            if(!isLoading)
             {
-                errorsLocal.Add("La contraseña es muy corta o muy larga");
-                manageErrors.DisplayErrors(errorsLocal);
-                return;
-            }
-
-            txtLogin.SetActive(false);
-            loadBtnLogin.SetActive(true);
-            animLoadLogin.PlayUIAnim();
-            
-            AuthService.LoginPlayer(nameOrGmail.text, password.text, 
-                (sucess) =>
+                var errorsLocal = new List<string>();
+                if (password.text.Length <= 6 || password.text.Length > 15)
                 {
-                    StartCoroutine(StopTimeSucces(3f));
-                },
-                (errors) =>
-                {
-                    manageErrors.DisplayErrors(errors);
-                    StartCoroutine(StopTimeFailed(3f));
+                    errorsLocal.Add("La contraseña es muy corta o muy larga");
+                    manageErrors.DisplayErrors(errorsLocal);
+                    return;
                 }
-            );
+
+                txtLogin.SetActive(false);
+                loadBtnLogin.SetActive(true);
+                animLoadLogin.PlayUIAnim();
+                
+                AuthService.LoginPlayer(nameOrGmail.text, password.text, 
+                    (sucess) =>
+                    {
+                        StartCoroutine(StopTimeSucces(3f));
+                    },
+                    (errors) =>
+                    {
+                        manageErrors.DisplayErrors(errors);
+                        StartCoroutine(StopTimeFailed(3f));
+                    }
+                );
+            }
         }
         
         IEnumerator StopTimeFailed(float time)
@@ -77,6 +81,7 @@ namespace FastFurios_Game.Connections
             loadBtnLogin.SetActive(false);
             txtLogin.SetActive(true);
             yield return new WaitForSeconds(time);
+            isLoading = false;
         }
         IEnumerator StopTimeSucces(float time)
         {
@@ -84,6 +89,7 @@ namespace FastFurios_Game.Connections
             // Debug.Log("Login successful");
             yield return new WaitForSeconds(time);
             SceneManager.LoadScene(2);
+            isLoading = false;
         }
     }
 }
