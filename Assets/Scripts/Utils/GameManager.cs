@@ -3,7 +3,7 @@ using System.IO;
 using UnityEngine;
 
 
-namespace FastFurios_Game.Helpers
+namespace FastFurios_Game.Utils
 {
 
     [Serializable]

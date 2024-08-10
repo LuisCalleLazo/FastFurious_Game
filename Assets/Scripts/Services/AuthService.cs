@@ -29,8 +29,37 @@ namespace FastFurios_Game.Services
             {
                 errorMessage(error);
             }));
-
         }
 
+        public static void RegisterPlayer(
+            string name, 
+            string email, 
+            string password, 
+            string birthDate, 
+            Action<AuthResponseDto> callback, 
+            Action<List<string>> errorMessage
+        )
+        {
+
+            Dictionary<string, string> formData = new Dictionary<string, string>();
+                formData.Add("Name", name);
+                formData.Add("Email", email);
+                formData.Add("Password", password);
+                formData.Add("BirthDate", birthDate);
+
+            ApiProvider.Instance.StartCoroutine(ApiProvider.Instance.PostRequest("/player/register", formData,
+            (responseJson) =>
+            {
+                var dataUser = JsonConvert.DeserializeObject<AuthResponseDto>(responseJson);
+                Debug.Log(dataUser.Player.Id);
+                PlayerPrefs.SetString("NamePlayer", dataUser.Player.Name);
+                PlayerPrefs.SetString("IdPlayer", dataUser.Player.Id.ToString());
+                callback(dataUser);
+            },
+            (error) =>
+            {
+                errorMessage(error);
+            }));
+        }
     }
 }
