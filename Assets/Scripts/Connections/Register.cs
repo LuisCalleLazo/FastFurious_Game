@@ -5,6 +5,7 @@ using FastFurios_Game.UI;
 using FastFurios_Game.Utils;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace FastFurios_Game.Connections
@@ -13,7 +14,7 @@ namespace FastFurios_Game.Connections
     {
         
         public TMP_InputField nameUser;
-        public TMP_InputField gmail;
+        public TMP_InputField emailUser;
         public TMP_Dropdown yearBirth;
         public TMP_Dropdown monthBirth;
         public TMP_Dropdown dayBirth;
@@ -36,6 +37,12 @@ namespace FastFurios_Game.Connections
         
         void Start()
         {
+            StartDatesDropDown();
+            showPassword.onValueChanged.AddListener(OnToggleValueChanged);
+        }
+
+        void StartDatesDropDown()
+        {
             yearBirth.ClearOptions();
             yearBirth.AddOptions(GetDates.GetListYearByDate());
             
@@ -44,8 +51,6 @@ namespace FastFurios_Game.Connections
             
             dayBirth.ClearOptions();
             dayBirth.AddOptions(GetDates.GetListDayByDate());
-            
-            showPassword.onValueChanged.AddListener(OnToggleValueChanged);
         }
         
         void OnToggleValueChanged(bool isOn)
@@ -65,11 +70,18 @@ namespace FastFurios_Game.Connections
                 isLoading = true;
                 var errorsLocal = new List<string>();
 
+                // todo: obtener la fecha a atraves de los dropdown
+                string birthdate = @$"{yearBirth.options[yearBirth.value].text}-{monthBirth.options[monthBirth.value].text}-{dayBirth.options[dayBirth.value].text}";
+
                 txtRegister.SetActive(false);
                 loadBtnReg.SetActive(true);
                 animLoadReg.PlayUIAnim();
                 
-                AuthService.LoginPlayer("nameOrGmail.text", "password.text", 
+                AuthService.RegisterPlayer(
+                    nameUser.text, 
+                    emailUser.text, 
+                    newPassword.text,
+                    birthdate,
                     (sucess) =>
                     {
                         StartCoroutine(StopTimeSucces(3f));
@@ -85,7 +97,6 @@ namespace FastFurios_Game.Connections
         
         IEnumerator StopTimeFailed(float time)
         {
-            // Debug.Log("Login failed");
             loadBtnReg.SetActive(false);
             txtRegister.SetActive(true);
             yield return new WaitForSeconds(time);
@@ -95,8 +106,8 @@ namespace FastFurios_Game.Connections
         IEnumerator StopTimeSucces(float time)
         {
             animLoadReg.StopUIAnim();
-            // Debug.Log("Login successful");
             yield return new WaitForSeconds(time);
+            SceneManager.LoadScene((int)ManageNumberEscene.LoadToLobby);
             isLoading = false;
         }
     }

@@ -1465,8 +1465,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a748482a8cfcc7845b2c3d665b01775a, type: 2}
-  m_sharedMaterial: {fileID: 74261702863137074, guid: a748482a8cfcc7845b2c3d665b01775a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5838,7 +5838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameUser: {fileID: 1049960775}
-  gmail: {fileID: 724887106}
+  emailUser: {fileID: 724887106}
   yearBirth: {fileID: 1214346459}
   monthBirth: {fileID: 2125388064}
   dayBirth: {fileID: 670396661}

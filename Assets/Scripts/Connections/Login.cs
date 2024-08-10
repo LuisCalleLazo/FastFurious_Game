@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using FastFurios_Game.Services;
 using FastFurios_Game.UI;
+using FastFurios_Game.Utils;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -88,7 +89,7 @@ namespace FastFurios_Game.Connections
             animLoadLogin.StopUIAnim();
             // Debug.Log("Login successful");
             yield return new WaitForSeconds(time);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene((int)ManageNumberEscene.LoadToLobby);
             isLoading = false;
         }
     }
