@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
-using FastFurios_Game.Helpers;
+using FastFurios_Game.Utils;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;

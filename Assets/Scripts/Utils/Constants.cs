@@ -10,6 +10,15 @@ namespace FastFurios_Game.Utils
         TimeGame = 120, // Seconds
     }
 
+    public enum ManageNumberEscene
+    {
+        Auth = 0,
+        LoadToLobby = 1,
+        LoadToNextScene = 2,
+        Lobby = 3,
+        GameOffline = 4
+    }
+
     public static class AxesControls
     {
         public static string ControlHorizontal() => "Horizontal";
