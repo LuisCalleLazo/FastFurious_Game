@@ -13,9 +13,9 @@ namespace FastFurios_Game.Utils
     public enum ManageNumberEscene
     {
         Auth = 0,
-        LoadToLobby = 1,
+        LoadToLobby = 3,
         LoadToNextScene = 2,
-        Lobby = 3,
+        Lobby = 1,
         GameOffline = 4
     }
 
@@ -23,5 +23,31 @@ namespace FastFurios_Game.Utils
     {
         public static string ControlHorizontal() => "Horizontal";
         public static string ControlVertical() => "Vertical";
+    }
+
+    public static class OptionsOfCar
+    {
+        public static List<string> GetColorsCars() => 
+            new List<string>
+            {
+                "Rojo",
+                "Verde",
+                "Azul",
+                "Amarrillo",
+                "Negro",
+                "Blanco"
+            };
+
+            
+        public static List<string> GetTypeCars() => 
+            new List<string>
+            {
+                "Honda",
+                "Toyota",
+                "Tesla",
+                "Susiki",
+                "Monster",
+                "Camioneta"
+            };
     }
 }
