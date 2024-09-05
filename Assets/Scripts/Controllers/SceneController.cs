@@ -6,7 +6,7 @@ namespace FastFurios_Game.Controllers
 {
     public class SceneController : MonoBehaviour
     {
-        public const int NEXT_SCENE_NUMBER = 2;
+        public int NEXT_SCENE_NUMBER = 2;
 
         private AsyncOperation asyncOperation;
 

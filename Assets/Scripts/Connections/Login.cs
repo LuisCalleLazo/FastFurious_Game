@@ -88,6 +88,11 @@ namespace FastFurios_Game.Connections
             animLoadLogin.StopUIAnim();
             // Debug.Log("Login successful");
             yield return new WaitForSeconds(time);
+
+            // Para que el loading haga la carga para el Lobby
+            PlayerPrefs.SetInt(LocalDataEnv.LoadNextScene(), (int)ManageNumberEscene.Lobby);
+            
+            // Ir al Loading del Lobby
             SceneManager.LoadScene((int)ManageNumberEscene.LoadToLobby);
             isLoading = false;
         }
