@@ -51,25 +51,25 @@ namespace FastFurios_Game.Provider
         }
         else
         {
-            try
-            {
-                // Intenta deserializar la respuesta de error en un ErrorDto
-                var errorDto = JsonConvert.DeserializeObject<List<string>>(www.downloadHandler.text);
-                if (errorDto != null && errorDto != null)
-                    onError?.Invoke(errorDto);
-                else
-                    // Si no se puede deserializar, invoca el error con el mensaje general
-                    onError?.Invoke(new List<string> { $"Fallo al conectar: {www.error}" });
-            }
-            catch (Exception ex)
-            {
-                onError?.Invoke(new List<string> { $"Fallo al conectar: {www.error}", $"Error: {ex.Message}" });
-            }
+          try
+          {
+            // Intenta deserializar la respuesta de error en un ErrorDto
+            var errorDto = JsonConvert.DeserializeObject<List<string>>(www.downloadHandler.text);
+            if (errorDto != null && errorDto != null)
+                onError?.Invoke(errorDto);
+            else
+                // Si no se puede deserializar, invoca el error con el mensaje general
+                onError?.Invoke(new List<string> { $"Fallo al conectar: {www.error}" });
+          }
+          catch (Exception ex)
+          {
+            onError?.Invoke(new List<string> { $"Fallo al conectar: {www.error}", $"Error: {ex.Message}" });
+          }
         }
       }
     }
     
-    public IEnumerator GetRequest(string endpoint, Action<string> onSuccess, Action<string> onError)
+    public IEnumerator GetRequest(string endpoint, Action<string> onSuccess, Action<List<string>> onError)
     {
       string apiUrl = baseUrl + endpoint;
 
@@ -84,12 +84,25 @@ namespace FastFurios_Game.Provider
         }
         else
         {
-          onError?.Invoke($"Fallo al conectar {www.error}");
+          try
+          {
+            // Intenta deserializar la respuesta de error en un ErrorDto
+            var errorDto = JsonConvert.DeserializeObject<List<string>>(www.downloadHandler.text);
+            if (errorDto != null && errorDto != null)
+                onError?.Invoke(errorDto);
+            else
+                // Si no se puede deserializar, invoca el error con el mensaje general
+                onError?.Invoke(new List<string> { $"Fallo al conectar: {www.error}" });
+          }
+          catch (Exception ex)
+          {
+            onError?.Invoke(new List<string> { $"Fallo al conectar: {www.error}", $"Error: {ex.Message}" });
+          }
         }
       }
     }
     
-    public IEnumerator DeleteRequest(string endpoint, Action<string> onSuccess, Action<string> onError)
+    public IEnumerator DeleteRequest(string endpoint, Action<string> onSuccess, Action<List<string>> onError)
     {
       string apiUrl = baseUrl + endpoint;
       
@@ -104,7 +117,20 @@ namespace FastFurios_Game.Provider
         }
         else
         {
-          onError?.Invoke($"Fallo al conectar {www.error}");
+          try
+          {
+            // Intenta deserializar la respuesta de error en un ErrorDto
+            var errorDto = JsonConvert.DeserializeObject<List<string>>(www.downloadHandler.text);
+            if (errorDto != null && errorDto != null)
+                onError?.Invoke(errorDto);
+            else
+                // Si no se puede deserializar, invoca el error con el mensaje general
+                onError?.Invoke(new List<string> { $"Fallo al conectar: {www.error}" });
+          }
+          catch (Exception ex)
+          {
+            onError?.Invoke(new List<string> { $"Fallo al conectar: {www.error}", $"Error: {ex.Message}" });
+          }
         }
       }
     }

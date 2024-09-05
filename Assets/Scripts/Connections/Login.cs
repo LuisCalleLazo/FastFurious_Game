@@ -32,7 +32,6 @@ namespace FastFurios_Game.Connections
         }
         void Start()
         {
-            // Suscribirse al evento onValueChanged del Toggle
             showPassword.onValueChanged.AddListener(OnToggleValueChanged);
         }
         

@@ -2,27 +2,30 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneController : MonoBehaviour
+namespace FastFurios_Game.Controllers
 {
-    public const int NEXT_SCENE_NUMBER = 2;
-
-    private AsyncOperation asyncOperation;
-
-    public void LoadNextSceneAsync()
+    public class SceneController : MonoBehaviour
     {
-        asyncOperation = SceneManager.LoadSceneAsync(NEXT_SCENE_NUMBER, LoadSceneMode.Single);
-        asyncOperation.allowSceneActivation = false;
+        public const int NEXT_SCENE_NUMBER = 2;
 
-        StartCoroutine(WaitForSceneToLoad());
-    }
+        private AsyncOperation asyncOperation;
 
-    private IEnumerator WaitForSceneToLoad()
-    {
-        while (!asyncOperation.isDone)
+        public void LoadNextSceneAsync()
         {
-            yield return null;
+            asyncOperation = SceneManager.LoadSceneAsync(NEXT_SCENE_NUMBER, LoadSceneMode.Single);
+            asyncOperation.allowSceneActivation = false;
+
+            StartCoroutine(WaitForSceneToLoad());
         }
 
-        asyncOperation.allowSceneActivation = true;
+        private IEnumerator WaitForSceneToLoad()
+        {
+            while (!asyncOperation.isDone)
+            {
+                yield return null;
+            }
+
+            asyncOperation.allowSceneActivation = true;
+        }
     }
 }
