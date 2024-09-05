@@ -546,6 +546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Loading
       objectReference: {fileID: 0}
+    - target: {fileID: 1650661497237688118, guid: 722c960b0b1542a43931257b7559c0d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4495040045439733785, guid: 722c960b0b1542a43931257b7559c0d9, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.61101
@@ -1181,7 +1185,6 @@ MonoBehaviour:
   cocheControllerGo: {fileID: 0}
   cocheGo: {fileID: 0}
   joystick: {fileID: 1439120161}
-  soundFx: {fileID: 1528325509}
 --- !u!4 &1163057512
 Transform:
   m_ObjectHideFlags: 0
