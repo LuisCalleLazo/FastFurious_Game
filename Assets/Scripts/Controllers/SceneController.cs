@@ -1,4 +1,5 @@
 using System.Collections;
+using FastFurios_Game.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,10 @@ namespace FastFurios_Game.Controllers
             asyncOperation.allowSceneActivation = false;
 
             StartCoroutine(WaitForSceneToLoad());
+        }
+        public void LoadNextEscene(ManageNumberEscene scene)
+        {
+            SceneManager.LoadScene((int)scene);
         }
 
         private IEnumerator WaitForSceneToLoad()

@@ -93,7 +93,7 @@ namespace FastFurios_Game.Connections
             PlayerPrefs.SetInt(LocalDataEnv.LoadNextScene(), (int)ManageNumberEscene.Lobby);
             
             // Ir al Loading del Lobby
-            SceneManager.LoadScene((int)ManageNumberEscene.LoadToLobby);
+            SceneManager.LoadScene((int)ManageNumberEscene.GameOffline);
             isLoading = false;
         }
     }
