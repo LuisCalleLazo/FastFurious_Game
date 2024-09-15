@@ -546,6 +546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Loading
       objectReference: {fileID: 0}
+    - target: {fileID: 1650661497237688118, guid: 722c960b0b1542a43931257b7559c0d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4495040045439733785, guid: 722c960b0b1542a43931257b7559c0d9, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.61101
@@ -1181,7 +1185,6 @@ MonoBehaviour:
   cocheControllerGo: {fileID: 0}
   cocheGo: {fileID: 0}
   joystick: {fileID: 1439120161}
-  soundFx: {fileID: 1528325509}
 --- !u!4 &1163057512
 Transform:
   m_ObjectHideFlags: 0
@@ -2411,7 +2414,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 10
   m_Sprite: {fileID: -853000366, guid: e69e2575e1e015548989fd23ed9ca644, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2433,13 +2436,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9df5ba0fa4428c448a9a5f3bfd6ee553, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

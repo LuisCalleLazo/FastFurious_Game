@@ -32,7 +32,6 @@ namespace FastFurios_Game.Connections
         }
         void Start()
         {
-            // Suscribirse al evento onValueChanged del Toggle
             showPassword.onValueChanged.AddListener(OnToggleValueChanged);
         }
         
@@ -89,7 +88,12 @@ namespace FastFurios_Game.Connections
             animLoadLogin.StopUIAnim();
             // Debug.Log("Login successful");
             yield return new WaitForSeconds(time);
-            SceneManager.LoadScene((int)ManageNumberEscene.LoadToLobby);
+
+            // Para que el loading haga la carga para el Lobby
+            PlayerPrefs.SetInt(LocalDataEnv.LoadNextScene(), (int)ManageNumberEscene.Lobby);
+            
+            // Ir al Loading del Lobby
+            SceneManager.LoadScene((int)ManageNumberEscene.GameOffline);
             isLoading = false;
         }
     }

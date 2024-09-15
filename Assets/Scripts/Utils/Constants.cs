@@ -10,12 +10,17 @@ namespace FastFurios_Game.Utils
         TimeGame = 120, // Seconds
     }
 
+    public static class LocalDataEnv
+    {
+        public static string LoadNextScene() => "LoadNextScene";
+    }
+
     public enum ManageNumberEscene
     {
         Auth = 0,
-        LoadToLobby = 3,
+        LoadToLobby = 1,
         LoadToNextScene = 2,
-        Lobby = 1,
+        Lobby = 3,
         GameOffline = 4
     }
 

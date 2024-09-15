@@ -3923,7 +3923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.035888445, g: 0.019971518, b: 0.20754719, a: 0.8117647}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8117647}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6798,7 +6798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.035888445, g: 0.019971518, b: 0.20754719, a: 0.8117647}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8117647}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7475,8 +7475,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -164.49542, y: -40}
-  m_SizeDelta: {x: 297.7357, y: 55.5132}
+  m_AnchoredPosition: {x: -188.92184, y: -40}
+  m_SizeDelta: {x: 346.5885, y: 55.5132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1430423215
 MonoBehaviour:
@@ -7498,7 +7498,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FAST FURIOUS
+  m_text: LAMENT ROAD
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a748482a8cfcc7845b2c3d665b01775a, type: 2}
   m_sharedMaterial: {fileID: 74261702863137074, guid: a748482a8cfcc7845b2c3d665b01775a, type: 2}
@@ -7507,8 +7507,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4279177152
+  m_fontColor: {r: 0.754717, g: 0.06051977, b: 0.06051977, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9494,7 +9494,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8fb3a04caab97a74f94dbbe8d96531fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d2cda956e0f0284cb754d89a6388ab5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
